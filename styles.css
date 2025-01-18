@@ -1,0 +1,497 @@
+/* General Styles */
+body, html {
+    margin: 0;
+  padding: 0;
+  background-image: url(image\ atlas\ coco/bg.png);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the body takes up full viewport height */
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(image\ atlas\ coco/HEADER.png);
+    padding: 10px 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 0px 20px;
+
+}
+
+
+  .logo img {
+    height: 150px;
+    top: 20px; 
+    right: 10px;
+    position: sticky;
+}
+  
+  /* Navbar */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:transparent;
+    z-index: 1000;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  li {
+    position: relative;
+  }
+  
+  li a {
+    display: block;
+    padding: 14px 20px;
+    color: #eee;
+  }
+  
+  li a:hover {
+    background-color: #575757;
+  }
+  
+  /* Dropdown Menu */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: transparent;
+    min-width: 200px;
+    border-top: 2px solid #575757;
+  }
+  
+  .dropdown-content a {
+    padding: 12px 20px;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Home Section (Carousel) */
+  #home {
+    margin-top: 0px; /* To ensure content is not hidden by fixed navbar */
+    position: relative;
+  }
+  
+  .carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-images img {
+    width: 100%;
+    height: auto;
+  }
+  
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+
+  /* about us section */
+  #about {
+    margin: 0px 45px;
+  }
+  #about h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #eee;
+  }
+  
+  /* Products Section */
+  #products {
+    padding: 50px 20px;
+    text-align: center;
+    color: #eee;
+  }
+  
+  #products h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .gallerys {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+  }
+  
+  .gallerys img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .gallerys img:hover {
+    transform: scale(1.05);
+  }
+
+  .certified {
+flex-direction: row;
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
+
+  }
+
+  .certified img{
+    width: 30%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+  }
+
+  .shipping {
+    flex-direction: row;
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
+margin: 30px 0px;
+
+  }
+
+  .shipping img{
+    width: 100%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+  }
+
+  /* font */
+
+.oswald {
+  font-family: "Oswald", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  /* margin: 0 20px; */
+  font-size: 1.5em;
+  color: #eee;
+}
+
+.josefin-sans {
+  font-family: "Josefin Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  /* margin: 0 20px; */
+  font-size: 1.5em;
+  color: #eee;
+  text-align: justify;
+}
+
+.ubuntu-regular {
+  font-family: "Ubuntu", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+  /* tab gallerys */
+.Gallery {
+  min-height: 100vh;
+  background: #eee;
+  padding-bottom: 100px;
+
+}
+
+.Gallery .controls {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  list-style: none;
+}
+  
+.Gallery .controls .buttons{
+
+  height: 40px;
+  width: 140px;
+  background: #eee;
+  color: #333;
+  font-size: 20px;
+  line-height: 40px;
+  cursor: pointer;
+  margin: 20px;
+box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+text-align: center;
+}
+
+.Gallery .controls .buttons.active{
+  background:coral;
+  color: #fff;
+}
+
+.Gallery .image-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.Gallery .image-container .image{
+  height: 250px;
+  width: 350px;
+  overflow: hidden;
+  border: 15px solid #fff;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  margin: 20px;
+}
+
+.Gallery .image-container .image img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.Gallery .image-container .image:hover img{
+  transform: scale(1.4);
+}
+
+  /* Social Media Icons */
+.social-media-icons {
+    position: bottom;
+    bottom: 20px; /* Positioned above WhatsApp */
+    left: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 1000; /* Make sure the icons are on top */
+  }
+  
+  .social-icon {
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 10px;
+    color: rgb(18, 18, 18);
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+  }
+  
+  .social-icon:hover {
+    background-color: #1da1f2; /* For Twitter, or change for other icons */
+  }
+  
+  .social-icon i {
+    font-size: 24px;
+  }
+
+ /* WhatsApp Button */
+.whatsapp-logo {
+    position: fixed;
+    bottom: 50px; /* Ensures there's space between the footer and button */
+    right: 40px;
+    background-color: #25d366;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Ensure it's on top */
+  }
+  
+  .whatsapp-logo img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .whatsapp-logo:hover {
+    background-color: #128c7e;
+  }
+
+  /* contact us */
+
+
+  #contact {
+    color: #eee;
+  }
+
+  #map {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: transparent; /* Warna latar belakang untuk kontras */
+}
+
+#map h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #eee; /* Warna teks judul */
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid #ddd; Tambahkan border untuk gaya */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+}
+
+.map-container iframe {
+    width: 100%;
+    max-width: 800px; /* Batas maksimum lebar */
+    height: 450px;
+    border: none; /* Hilangkan border iframe */
+}
+
+  
+  /* Footer */
+  footer {
+    background-color: #060723;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    margin-top: auto; /* Ensures footer stays at the bottom of the page */
+  }
+  
+  /* Footer padding and content spacing */
+  /* body { */
+    /* padding-bottom: 120px; Make sure footer is not overlapping the fixed WhatsApp button */
+  /* } */
+
+  /* Responsiveness */
+@media screen and (max-width: 1200px) {
+  /* For large screens like tablets and laptops */
+  .logo img {
+    height: 120px;
+  }
+  
+  .navbar {
+    font-size: 1.2em;
+  }
+
+  .gallerys {
+    grid-template-columns: repeat(2, 1fr); /* Two columns instead of multiple */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* For tablets and smaller screens */
+  body {
+    font-size: 1.1em;
+  }
+
+  header {
+    padding: 10px 15px;
+  }
+
+  .logo img {
+    height: 100px;
+    position: static; /* Make logo not sticky on small screens */
+    margin-bottom: 10px;
+  }
+
+  .navbar ul {
+    flex-direction: column; /* Stack the navigation items vertically */
+    align-items: center;
+  }
+
+  .carousel-images img {
+    width: 100%;
+  }
+
+  .gallerys {
+    grid-template-columns: 1fr; /* One column for smaller screens */
+  }
+
+  .social-media-icons {
+    left: 10px; /* Move social media icons closer to the edge */
+    bottom: 10px;
+  }
+  
+  .whatsapp-logo {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* For small devices like phones */
+  header {
+    padding: 5px 10px;
+  }
+
+  .logo img {
+    height: 80px;
+  }
+
+  .navbar ul {
+    flex-direction: column; /* Stack navbar items */
+    width: 100%; /* Full width navbar */
+  }
+
+  .navbar li {
+    text-align: center;
+  }
+
+  .carousel {
+    width: 100%;
+  }
+
+  .gallerys {
+    grid-template-columns: 1fr; /* Stack product images */
+  }
+
+  .social-media-icons {
+    gap: 10px;
+    left: 5px; /* Adjust position of social media icons */
+    bottom: 10px;
+  }
+
+  .whatsapp-logo {
+    right: 10px;
+    bottom: 10px;
+  }
+}

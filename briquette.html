@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Atlas Charcoal Indonesia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-image: url('image atlas coco/HEADER.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .logo img {
+            height: 100px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            padding: 10px 15px;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            top: 40px;
+            left: 0;
+            padding: 10px 0;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px 15px;
+            color: white;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Gallery Styles */
+        .gallery-section {
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            padding: 50px 20px;
+        }
+
+        .gallery-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .image-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .image-container button {
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .image-container button:hover {
+            background-color: #555;
+        }
+
+        .image-container img {
+            width: 375px;
+            height: 375px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .description-container {
+            margin: 0px 20px;
+            
+        }
+
+        .description-container h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-align: justify;
+            margin-right: 20px;
+        }
+
+        .description-container p {
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: justify;
+        }
+
+        
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            cursor: pointer; /* Make lightbox clickable */
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+        }
+
+.specific{
+flex-direction: row;
+display: flex;
+margin: 10px 0px;
+justify-content: center;
+gap: 10px;
+flex-wrap: wrap;}
+
+.specific img{
+    width: 45%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+.packaging{
+    margin: 0px 20px;
+   
+}
+
+.packaging h1{
+    font-size: 25px;
+    margin-bottom: 40px;
+    
+}.packaging h2{
+    font-size: 25px;
+    font-style: bold ;
+    text-decoration: underline;
+}
+
+.packaging p{
+    font-size: 25px;
+    margin: 30px 20px;
+}
+
+        /* Hide lightbox initially */
+        .lightbox:target {
+            display: flex;
+        }
+
+        /* Social Media and WhatsApp Button */
+        .social-media-icons {
+            position: bottom;
+            bottom: 100px;
+            left: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            background-color: transparent;
+            color: black;
+            font-size: 20px;
+        }
+
+        .social-icon:hover {
+            color: #1da1f2;
+        }
+
+        .whatsapp-logo {
+            position: fixed;
+            bottom: 50px;
+            right: 40px;
+            background-color: #25d366;
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .whatsapp-logo img {
+            width: 50px;
+            height: 50px;
+        }
+
+        footer {
+            background-color: #060723;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="image atlas coco/logo.png" alt="Atlas Coco Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li class="dropdown">
+                    <a href="#products">Products</a>
+                    <div class="dropdown-content">
+                        <a href="#">Shisha</a>
+                        <a href="#">Barbecue</a>
+                        <a href="#">Wood Charcoal</a>
+                        <a href="#">Coconut Shell Charcoal</a>
+                    </div>
+                </li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="gallery-section">
+        <div class="gallery-container">
+            <div class="image-container">
+                <button id="prevBtn">&lt;</button>
+                <img id="galleryImage" src="image atlas coco/shisha 1.png" alt="Image 1">
+                <button id="nextBtn">&gt;</button>
+            </div>
+            <div class="description-container">
+                <h2 id="imageTitle">Title of Image 1</h2>
+                <p id="imageDescription">fdghhhfghfghfghf</p>
+            </div>
+        </div>
+    </main>
+
+    <section>
+        <div class="specific">
+            <img src="image atlas coco/shisha desc.png" alt="">
+
+            <img src="image atlas coco/shisha desc 2.png" alt="">
+        </div>
+    </section>
+
+    <section class="packaging">
+        <div>
+            <h1>Custom shapes are available upon request</h1>
+            <h2>PACKAGING</h2>
+                <p>1. Inner plastic + inner box + master box cartons</p>
+                <p>2. Inner plastic + master box cartons (No Inner Box)</p>
+                <h2>Container Capacity :</h2>
+                <p>– 20’ft Container size will fit up to 18 Tons</p>
+                <p>– 40’ft Container size will fit up to 25 Tons</p>
+           
+        </div>
+    </section>
+
+    <div id="lightbox" class="lightbox">
+        <img id="lightboxImage" src="image atlas coco/shisha 1.png" alt="Lightbox Image">
+    </div>
+
+    <div class="social-media-icons">
+        <a href="https://www.facebook.com" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" class="social-icon"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <a href="https://api.whatsapp.com/send?phone=6289618177736" class="whatsapp-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <footer>
+        <p>&copy; 2025 PT Atlas Charcoal Indonesia. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+
+const productDescription = `
+Our coconut charcoal briquettes are meticulously crafted from 100% natural coconut shells, sustainably sourced from Sulawesi, Sumatra, and Java. This ensures exceptional quality and supports eco-conscious practices.
+
+Designed for performance, our briquettes boast a high fixed carbon content, providing intense, long-lasting heat with minimal ash production. This makes them both efficient and environmentally friendly. Their durability and uniformity are achieved through advanced high-pressure press technology and rigorous quality control, meeting the most demanding standards.
+
+Available in a variety of shapes and sizes, our briquettes are tailored to suit diverse markets and applications. Need something unique? We offer custom options for shape, size, composition, and packaging to meet your specific business requirements.
+
+Let’s work together to meet your needs! Contact us today to discuss your custom order.
+`;
+        const images = [
+            { src: "image atlas coco/shisha 1.png", title: "Coconut Charcoal Briquettes", description: productDescription },
+            { src: "image atlas coco/shisha 2.png", title: "Coconut Charcoal Briquettes", description: productDescription },
+            { src: "image atlas coco/shisha 3.png", title: "Coconut Charcoal Briquettes", description: productDescription },
+            { src: "image atlas coco/shisha 4.png", title: "Coconut Charcoal Briquettes", description: productDescription },
+            { src: "image atlas coco/shisha 5.png", title: "Coconut Charcoal Briquettes", description: productDescription },
+            { src: "image atlas coco/shisha 6.png", title: "Coconut Charcoal Briquettes", description: productDescription }
+        ];
+        let currentIndex = 0;
+
+        const galleryImage = document.getElementById('galleryImage');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const imageTitle = document.getElementById('imageTitle');
+        const imageDescription = document.getElementById('imageDescription');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function updateGallery(index) {
+            const { src, title, description } = images[index];
+            galleryImage.src = src;
+            lightboxImage.src = src;
+            imageTitle.textContent = title;
+            imageDescription.textContent = description;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateGallery(currentIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateGallery(currentIndex);
+        });
+
+        galleryImage.addEventListener('click', () => {
+            window.location.hash = '#lightbox';
+        });
+
+        // Close lightbox when clicking outside the image
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                window.location.hash = ''; // Close the lightbox
+            }
+        });
+
+        updateGallery(currentIndex);
+    </script>
+</body>
+</html>

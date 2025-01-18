@@ -1,0 +1,209 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 70px;
+    background-color: #fbfbf6 !important;
+    height: 100vh;
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #060723;
+    padding: 10px 20px;
+    width: 100vw;
+
+}
+
+.bg-body-tertiary 
+{color: #4c0404;
+    
+
+}
+.logo img {
+    height: 150px;
+    top: 20px; 
+    right: 10px;
+    position: sticky;
+}
+
+/* Styling the main menu */
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #333;
+}
+
+.menu li {
+    position: relative; /* Needed for dropdown positioning */
+}
+
+.menu a {
+    display: flex; /* Allows alignment of text and arrow */
+    align-items: center;
+    justify-content: space-between; /* Adds space between text and arrow */
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    background-color: #060723;
+}
+
+.menu a:hover {
+    background-color: #060723;
+}
+
+/* Styling the dropdown menu */
+.dropdown-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%; /* Position below the parent menu item */
+    left: 0;
+    background-color: #333;
+    display: none; /* Hidden by default */
+}
+
+.dropdown-menu li a {
+    padding: 10px 20px;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Arrow styling */
+.arrow {
+    margin-left: 8px; /* Add space between text and arrow */
+    font-size: 0.8em;
+}
+
+/* Rotate arrow when dropdown is open */
+.dropdown.open .arrow {
+    transform: rotate(180deg); /* Arrow pointing up */
+    transition: transform 0.3s; /* Smooth animation */
+}
+
+.dropdown.open .dropdown-menu {
+    display: block; /* Show dropdown when .open class is added */
+}
+
+
+
+#home .slider {
+    position: relative;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    overflow-x: hidden;
+    object-fit: cover;
+}
+
+#home .slides img {
+width: 100vw;
+    display: none;
+    left: 0;
+    right: 0;
+    overflow-x: hidden;
+    object-fit: cover;
+    align-items: center;
+}
+
+#home .slides img.active {
+    display: block;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-item {
+    flex: 1 1 calc(33.333% - 20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #141e41;
+    color: #f8f8f8;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.aboutustext{
+    text-align: justify;
+    margin-left: 50px;
+    margin-right: 50px;
+    color: #060947;
+
+
+}
+.producttext{
+    text-align: justify;
+    margin-left: 50px;
+    margin-right: 50px;
+    color: #060947;
+
+}
+
+.Roboto-Condensed{
+font-family: "Roboto Condensed" serif;
+  font-optical-sizing: auto;
+  font-weight:400;
+  font-style: normal;;
+
+
+}
+
+/* gallery start */
+.image-container {
+    position: relative;
+    width: 200px;
+    max-width: 100%;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform 0.7s;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    display: flex; /* Menambahkan Flexbox untuk pusatkan konten */
+    justify-content: center; /* Horizontal center */
+    align-items: center; /* Vertical center */
+  }
+  
+  .image-container span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Menambahkan tinggi span untuk memastikan itu mengisi container */
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+    display: flex; /* Flexbox pada span untuk menyejajarkan gambar */
+    justify-content: center; /* Horizontal center */
+    align-items: center; /* Vertical center */
+  }
+  
+  .image-container span img {
+    width: 100%;
+    height: auto; /* Agar gambar tetap proporsional */
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center;
+
+  }
+  
+  .image-container span img.zoomed {
+    transform: scale(3); /* Zoom gambar saat diklik */
+    z-index: 10; /* Pastikan gambar yang di-zoom berada di atas gambar lain */
+  }
+  /* gallery end */

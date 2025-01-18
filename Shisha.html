@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coconut Charcoal Briquettes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo img {
+            height: 50px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: auto;
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        #features ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .product-gallery {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .product-item {
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Company Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Coconut Charcoal Briquettes for Shisha</h1>
+        <p>High-quality coconut charcoal briquettes, perfect for Shisha or Hookah use.</p>
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="image atlas coco/bbq 2.png" alt="Charcoal Image 1">
+                <img src="image atlas coco/bbq1.jpg" alt="Charcoal Image 2">
+                <img src="image atlas coco/finger product.avif" alt="Charcoal Image 3">
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <section id="features">
+        <h2>Product Features</h2>
+        <ul>
+            <li>High fixed carbon content</li>
+            <li>Less ash, longer burn time</li>
+            <li>Eco-friendly</li>
+            <li>Available in multiple shapes and sizes</li>
+        </ul>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2025 Coconut Charcoal Company. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+
+        function moveSlide(step) {
+            const slides = document.querySelectorAll('.carousel-images img');
+            currentIndex = (currentIndex + step + slides.length) % slides.length;
+            document.querySelector('.carousel-images').style.transform = `translateX(${-currentIndex * 100}%)`;
+        }
+    </script>
+</body>
+</html>

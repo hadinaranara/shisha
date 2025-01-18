@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- magnific popup cdn link -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/magnific-popup.min.css">
+    <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- For Font Awesome Icons -->
+</head>
+
+<header class="header-background oswald">
+    <a href="index.html">
+    <div class="logo">
+        <img src="image atlas coco/logo.png" alt="image atlas coco/logo.jpeg">
+         
+    </div>
+  </a>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li class="dropdown">
+        <a href="#product">Products</a>
+        <div class="dropdown-content">
+            <a href="briquette.html">Charcoal Briquette</a>
+            <a href="#">Barbecue Charcoal</a>
+          <a href="#">Coconut Shell Charcoal</a>
+              <a href="#">Wood Charcoal</a>
+        
+        </div>
+        <li><a href="gallery.html">Gallery</a></li>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<body>
+    <div class="Gallery">
+<ul class="controls">
+    <li class="buttons active" data-filter="all">all</li>
+    <li class="buttons" data-filter="product1">product1</li>
+    <li class="buttons" data-filter="product2">product2</li>
+    <li class="buttons" data-filter="product3">product3</li>
+    <li class="buttons" data-filter="product4">product4</li>
+    <li class="buttons" data-filter="product5">product5</li>
+</ul>
+
+<div class="image-container">
+
+    <a href="image atlas coco/bbq 2.png" class="image product1">
+        <img src="image atlas coco/bbq 2.png" alt="">
+    </a>
+    <a href="image atlas coco/bbq 2.png" class="image product1">
+        <img src="image atlas coco/bbq 2.png" alt="">
+    </a>
+    <a href="image atlas coco/bbq1.jpg" class="image product2">
+        <img src="image atlas coco/bbq1.jpg" alt="">
+    </a>
+    <a href="image atlas coco/bbq 2.png" class="image product3">
+        <img src="image atlas coco/bbq 2.png" alt="">
+    </a>
+    <a href="image atlas coco/bbq 2.png" class="image product4">
+        <img src="image atlas coco/bbq 2.png" alt="">
+    </a>
+    <a href="image atlas coco/bbq 2.png" class="image product1">
+        <img src="image atlas coco/bbq 2.png" alt="">
+    </a>
+    <a href="image atlas coco/bbq 2.png" class="image product1">
+        <img src="image atlas coco/bbq 2.png" alt="">
+    </a>
+    <a href="image atlas coco/bbq 2.png" class="image product1">
+        <img src="image atlas coco/bbq 2.png" alt="">
+    </a>
+    <a href="image atlas coco/bbq 2.png" class="image product1">
+        <img src="image atlas coco/bbq 2.png" alt="">
+    </a>
+    <a href="image atlas coco/bbq 2.png" class="image product1">
+        <img src="image atlas coco/bbq 2.png" alt="">
+    </a>
+    <a href="image atlas coco/bbq 2.png" class="image product1">
+        <img src="image atlas coco/bbq 2.png" alt="">
+    </a>
+    <a href="image atlas coco/bbq 2.png" class="image product1">
+        <img src="image atlas coco/bbq 2.png" alt="">
+    </a>
+    <a href="image atlas coco/bbq 2.png" class="image product1">
+        <img src="image atlas coco/bbq 2.png" alt="">
+    </a>
+    <a href="image atlas coco/bbq 2.png" class="image product1">
+        <img src="image atlas coco/bbq 2.png" alt="">
+    </a>
+    <a href="image atlas coco/bbq 2.png" class="image product1">
+        <img src="image atlas coco/bbq 2.png" alt="">
+    </a>
+    <a href="image atlas coco/bbq 2.png" class="image product1">
+        <img src="image atlas coco/bbq 2.png" alt="">
+    </a>
+    <a href="image atlas coco/bbq 2.png" class="image product1">
+        <img src="image atlas coco/bbq 2.png" alt="">
+    </a>
+    <a href="image atlas coco/bbq 2.png" class="image product1">
+        <img src="image atlas coco/bbq 2.png" alt="">
+    </a>
+    <a href="image atlas coco/bbq 2.png" class="image product1">
+        <img src="image atlas coco/bbq 2.png" alt="">
+    </a>
+    <a href="image atlas coco/bbq 2.png" class="image product1">
+        <img src="image atlas coco/bbq 2.png" alt="">
+    </a>
+    <a href="image atlas coco/bbq 2.png" class="image product1">
+        <img src="image atlas coco/bbq 2.png" alt="">
+    </a>
+    <a href="image atlas coco/bbq 2.png" class="image product1">
+        <img src="image atlas coco/bbq 2.png" alt="">
+    </a>
+    
+    
+</div>
+</div>
+
+<!-- jquery cdn link  -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- magnific pop up  -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/jquery.magnific-popup.min.js"></script>
+
+ <script>
+$(document).ready(function(){
+
+    $('.buttons').click(function(){
+$(this).addClass('active').siblings().removeClass('active');
+
+var filter = $(this).attr('data-filter')
+
+if(filter == 'all'){
+    $('.image').show(400);
+}else{
+    $('.image').not('.'+filter).hide(200);
+    $('.image').filter('.'+filter).show(400);
+}
+
+    });
+    $('.Gallery').magnificPopup({
+        delegate:'a',
+        type:'image',
+        gallery:{
+            enabled:true
+        }
+    })
+});
+
+ </script>
+
+</body>
+</html>

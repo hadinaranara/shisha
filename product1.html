@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Atlas Charcoal Indonesia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+    <style>
+        /* CSS */
+        body, html {
+    margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the body takes up full viewport height */
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(image\ atlas\ coco/HEADER.png);
+    padding: 10px 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 2px 20px;
+
+}
+
+
+  .logo img {
+    height: 150px;
+    top: 20px; 
+    right: 10px;
+    position: sticky;
+}
+  
+  /* Navbar */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:transparent;
+    z-index: 1000;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  li {
+    position: relative;
+  }
+  
+  li a {
+    display: block;
+    padding: 14px 20px;
+    color: white;
+  }
+  
+  li a:hover {
+    background-color: #575757;
+  }
+  
+  /* Dropdown Menu */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    min-width: 200px;
+    border-top: 2px solid #575757;
+  }
+  
+  .dropdown-content a {
+    padding: 12px 20px;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+        .gallery-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px 0;
+            padding: 20px;
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .image-container {
+        position: relative;
+        display: flex;
+        align-items: center; /* Pusatkan tombol secara vertikal */
+        justify-content: space-between; /* Buat tombol berada di sisi kiri dan kanan gambar */
+        gap: 10px;
+    }
+
+    .image-container button {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 20px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+    }
+
+    .image-container button:hover {
+        background-color: #555;
+    }
+
+    .image-container img {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+        .description-container {
+            max-width: 400px;
+        }
+
+        .description-container h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .description-container p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+       /* Social Media Icons */
+.social-media-icons {
+    position: bottom;
+    bottom: 20px; /* Positioned above WhatsApp */
+    left: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 1000; /* Make sure the icons are on top */
+  }
+  
+  .social-icon {
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 10px;
+    color: rgb(18, 18, 18);
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+  }
+  
+  .social-icon:hover {
+    background-color: #1da1f2; /* For Twitter, or change for other icons */
+  }
+  
+  .social-icon i {
+    font-size: 24px;
+  }
+
+ /* WhatsApp Button */
+.whatsapp-logo {
+    position: fixed;
+    bottom: 50px; /* Ensures there's space between the footer and button */
+    right: 40px;
+    background-color: #25d366;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Ensure it's on top */
+  }
+  
+  .whatsapp-logo img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .whatsapp-logo:hover {
+    background-color: #128c7e;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #060723;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    margin-top: auto; /* Ensures footer stays at the bottom of the page */
+  }
+  
+    </style>
+</head>
+<body>
+    <header class="header-background">
+        <div class="logo">
+            <img src="image atlas coco/logo.png" alt="Atlas Coco Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li class="dropdown">
+                    <a href="#products">Products</a>
+                    <div class="dropdown-content">
+                        <a href="#">Shisha</a>
+                        <a href="#">Barbecue</a>
+                        <a href="#">Wood Charcoal</a>
+                        <a href="#">Coconut Shell Charcoal</a>
+                    </div>
+                </li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="gallery-section">
+        <div class="gallery-container">
+            <!-- Image and Buttons -->
+            <div class="image-container">
+                <button id="prevBtn">&lt;</button>
+                <img id="galleryImage" src="image atlas coco/carcoalbricket.jpeg" alt="Image 1">
+                <button id="nextBtn">&gt;</button>
+            </div>
+
+            <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <img id="lightboxImage" src="image atlas coco/carcoalbricket.jpeg" alt="Lightbox Image">
+    </div>
+
+            <!-- Description -->
+            <div class="description-container">
+                <h2 id="imageTitle">Title of Image 1</h2>
+                <p id="imageDescription">This is the description of the first image. It explains the details about the product or service shown in the image.</p>
+            </div>
+        </div>
+    </main>
+
+</section>
+
+<div class="social-media-icons">
+    <a href="https://www.facebook.com/youradminaccount" target="_blank" class="social-icon">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://twitter.com/youradminaccount" target="_blank" class="social-icon">
+      <i class="fab fa-twitter"></i>
+    </a>
+    <a href="https://www.instagram.com/youradminaccount" target="_blank" class="social-icon">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+
+<!-- WhatsApp Logo -->
+<a id="whatsapp-btn" href="https://api.whatsapp.com/send?phone=6289618177736&text=Hello%20I%20want%20to%20ask%20about%20Atlas%20Charcoal%20Products%20." 
+target="_blank" class="whatsapp-logo">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo">
+</a>
+
+    <footer>
+        <p>&copy; 2025 PT ATLAS CHARCOAL INDONESIA. Semua hak dilindungi.</p>
+    </footer>
+
+    <script>
+        // JavaScript
+        const images = [
+            {
+                src: "image atlas coco/carcoalbricket.jpeg",
+                title: "Title of Image 1",
+                description: "This is the description of the first image. It explains the details about the product or service shown in the image."
+            },
+            {
+                src: "image atlas coco/carcoalbricket2.jpeg",
+                title: "Title of Image 2",
+                description: "Description for the second image goes here."
+            },
+            {
+                src: "image atlas coco/carcoalbricket3.jpeg",
+                title: "Title of Image 3",
+                description: "Details about the third image can be added here."
+            },
+            {
+                src: "image atlas coco/carcoalbricket4.jpeg",
+                title: "Title of Image 3",
+                description: "Details about the third image can be added here."
+            },
+            {
+                src: "image atlas coco/carcoalbricket5.jpeg",
+                title: "Title of Image 3",
+                description: "Details about the third image can be added here."
+            }
+        ];
+
+        let currentIndex = 0;
+
+        const galleryImage = document.getElementById("galleryImage");
+        const lightboxImage = document.getElementById("lightboxImage");
+        const imageTitle = document.getElementById("imageTitle");
+        const imageDescription = document.getElementById("imageDescription");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+
+        function updateGallery(index) {
+            galleryImage.src = images[index].src;
+            lightboxImage.src = images[index].src;
+            imageTitle.textContent = images[index].title;
+            imageDescription.textContent = images[index].description;
+        }
+
+        prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateGallery(currentIndex);
+        });
+
+        nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateGallery(currentIndex);
+        });
+
+        // Initialize the gallery
+        updateGallery(currentIndex);
+
+        // whatsapp
+// JavaScript to handle WhatsApp link click and prevent scroll behavior.
+document.getElementById('whatsapp-btn').addEventListener('click', function(event) {
+  // Prevent default behavior, which might cause issues with layout shift.
+  event.preventDefault();
+
+  // Open WhatsApp in a new window or tab.
+  window.open(this.href, '_blank');
+});
+    </script>
+</body>
+</html>
